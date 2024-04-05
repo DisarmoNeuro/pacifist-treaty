@@ -10,7 +10,7 @@
   }
 
   &__list {
-    @apply grid md:grid-cols-2 w-full mt-4 md:mt-8 gap-y-2;
+    @apply grid md:grid-cols-2 w-full mt-4 md:mt-8 gap-y-3;
     max-width: 44rem;
   }
 }

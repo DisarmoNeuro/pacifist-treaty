@@ -1,7 +1,5 @@
 .welcome {
-  @apply h-80 flex flex-col justify-center select-none;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
+  @apply h-80 flex flex-col justify-center px-4 md:px-20 select-none;
 
   background-image: url('@/assets/img/banner.png');
   background-repeat: no-repeat;
