@@ -20,10 +20,10 @@
   @apply flex;
 
   &__expander {
-    @apply flex items-start text-primary-700 md:flex-row-reverse;
+    @apply flex items-start text-secondary-700 hover:text-primary-700 md:flex-row-reverse;
 
     &::after {
-      @apply inline-block content-[''] w-0.5 h-full mr-3 bg-primary-700;
+      @apply inline-block content-[''] w-0.5 h-full mr-3 bg-secondary-700;
     }
   }
 
@@ -32,7 +32,7 @@
   }
 
   &__title {
-    @apply hidden md:block w-7 mr-3 md:w-14 text-primary-700 font-brigada font-bold select-none;
+    @apply hidden md:block w-7 mr-3 md:w-14 text-secondary-700 font-brigada font-bold select-none;
 
     &--mobile {
       @apply block md:hidden;
@@ -48,7 +48,7 @@
   @apply flex flex-col md:flex-row;
 
   &__date {
-    @apply min-w-max mt-0.5 mb-2 mr-5 text-primary-700 select-none;
+    @apply min-w-max mt-0.5 mb-2 mr-5 text-secondary-700 select-none;
   }
 
   &__content {
@@ -56,7 +56,7 @@
   }
 
   &__title {
-    @apply mb-1 text-primary-700;
+    @apply mb-1 text-secondary-700;
   }
 
   &__author {
