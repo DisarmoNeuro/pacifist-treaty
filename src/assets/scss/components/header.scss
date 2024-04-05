@@ -1,5 +1,5 @@
 .header {
-  @apply sticky top-0 bg-primary-700 z-10;
+  @apply sticky top-0 bg-primary-700 z-10 select-none;
 
   &__container {
     @apply relative flex justify-between items-center container h-14 w-auto sm:w-full mx-6 sm:mx-auto;
@@ -17,24 +17,42 @@
     @apply flex items-center;
   }
 
-  &__locale {
-    @apply w-6;
-  }
-
   &__menu {
     @apply hidden flex-row space-x-9 md:flex text-white;
 
     &--item {
       @apply cursor-pointer;
     }
+  }
 
-    &--burger {
-      @apply w-8 text-white cursor-pointer;
+  &__locale {
+    @apply relative mr-4 text-white;
+
+    &--current {
+      @apply flex gap-3 py-4 px-4 text-xl hover:bg-secondary-900 cursor-pointer transition-all;
+    }
+
+    &--list {
+      @apply absolute right-0 w-full;
+    }
+
+    &--item {
+      @apply px-8 py-2 text-center bg-primary-700 hover:bg-secondary-900 cursor-pointer;
+    }
+
+    &--icon {
+      @apply min-w-6;
     }
   }
 
   &__popup {
-    @apply absolute top-full right-0 flex flex-col w-full md:w-96 py-3 bg-secondary-900;
+    &--icon {
+      @apply min-w-8 py-3 text-white cursor-pointer;
+    }
+
+    &--list {
+      @apply absolute top-full right-0 flex flex-col w-full md:w-96 py-3 bg-secondary-900;
+    }
 
     &--item {
       @apply flex-1 py-2 px-10 md:px-20 font-light text-white hover:bg-primary-700 cursor-pointer;

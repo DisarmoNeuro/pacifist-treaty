@@ -20,16 +20,28 @@
 
       <div class="header__right">
         <div class="header__locale">
-          <span>{{ appStore.currentLocale.alias }}</span>
-          <ChevronDownIcon />
+          <div ref="refLocaleButton" class="header__locale--current" @click="showLocalePopup">
+            <span class="header__locale--text">{{ currentLocale.alias }}</span>
+            <ChevronDownIcon class="header__locale--icon" />
+          </div>
+          <Transition>
+            <ul v-show="localePopupState" ref="refLocaleMenu" class="header__locale--list">
+              <template v-for="locale in locales" :key="locale.id">
+                <li class="header__locale--item" @click.stop="selectLocale(locale.id)">{{ locale.alias }}</li>
+              </template>
+            </ul>
+          </Transition>
         </div>
-        <div class="header__menu--burger">
-          <Bars3Icon @click="switchPopup" />
+
+        <div class="header__popup">
+          <div ref="refMobileMenuButton" class="header__popup--icon">
+            <Bars3Icon @click="showMenuPopup" />
+          </div>
         </div>
       </div>
 
       <Transition>
-        <ul v-show="popupMenuActive" class="header__popup" @click.stop="switchPopup">
+        <ul v-show="menuPopupState" ref="refMobileMenu" class="header__popup--list" @click.stop="showMenuPopup">
           <RouterLink to="/#history" :replace="false">
             <li class="header__popup--item">Историческая традиция</li>
           </RouterLink>
@@ -59,17 +71,45 @@
 
 <script setup lang="ts">
 import { Bars3Icon, ChevronDownIcon } from '@heroicons/vue/24/solid'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 import { IconLogo } from '@/components/icons'
-import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/store'
 
 const appStore = useAppStore()
-const popupMenuActive = ref<boolean>(false)
+const { locales, currentLocale, localePopupState, menuPopupState } = storeToRefs(appStore)
+const selectLocale = appStore.selectLocale
+const showLocalePopup = appStore.showLocalePopup
+const showMenuPopup = appStore.showMenuPopup
 
-const switchPopup = (): void => {
-  popupMenuActive.value = !popupMenuActive.value
+const refMobileMenu = ref<Node>()
+const refMobileMenuButton = ref<Node>()
+const refLocaleMenu = ref<Node>()
+const refLocaleButton = ref<Node>()
+
+const onClickOutside = (event: MouseEvent): void => {
+  const menu = refMobileMenu.value!
+  const menuButton = refMobileMenuButton.value!
+  const localeMenu = refLocaleMenu.value!
+  const localeButton = refLocaleButton.value!
+
+  if (event.target instanceof Node && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+    menuPopupState.value = false
+  }
+
+  if (event.target instanceof Node && !localeMenu.contains(event.target) && !localeButton.contains(event.target)) {
+    localePopupState.value = false
+  }
 }
+
+onMounted(() => {
+  window.addEventListener('click', onClickOutside)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('click', onClickOutside)
+})
 </script>
 
 <style src="@/assets/scss/components/header.scss" lang="scss" scoped />
