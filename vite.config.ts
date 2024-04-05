@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: '/pacifist-treaty',
+  base: '/',
   build: {
     sourcemap: false
   },
