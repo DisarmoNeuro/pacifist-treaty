@@ -1,0 +1,20 @@
+.members {
+  @apply py-12 md:py-24;
+
+  &__container {
+    @apply flex flex-col items-center container mx-auto px-6;
+  }
+
+  &__title {
+    @apply md:w-full text-center text-secondary-700 font-brigada font-bold;
+  }
+
+  &__list {
+    @apply grid md:grid-cols-2 w-full mt-4 md:mt-8 gap-y-2;
+    max-width: 44rem;
+  }
+}
+
+.member {
+  @apply text-center border-b border-dotted border-black mx-4;
+}

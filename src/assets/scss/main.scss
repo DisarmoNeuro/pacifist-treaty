@@ -1,0 +1,54 @@
+@import './tailwind.scss';
+@import './fonts.scss';
+
+@layer utilities {
+  body {
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-700 border-x border-solid border-white;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-700;
+  }
+}
+
+.heading {
+  &--1 {
+    @apply text-2xl md:text-4xl select-none;
+  }
+
+  &--2 {
+    @apply text-lg md:text-2xl select-none;
+  }
+
+  &--3 {
+    @apply text-base md:text-xl select-none;
+  }
+}
+
+article,
+li,
+p,
+span {
+  @apply text-sm md:text-base;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

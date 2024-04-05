@@ -1,0 +1,41 @@
+.history {
+  @apply py-12 md:py-24;
+
+  &__container {
+    @apply flex flex-col items-center container mx-auto px-6;
+  }
+
+  &__title {
+    @apply text-primary-700 text-center font-brigada font-bold;
+    max-width: 19rem;
+
+    @media (min-width: 768px) {
+      max-width: 29rem;
+    }
+  }
+
+  &__video {
+    @apply mb-12 md:mb-24 select-none;
+    width: 20rem;
+    height: 11.25rem;
+
+    @media (min-width: 768px) {
+      width: 35rem;
+      height: 19.75rem;
+    }
+
+    @media (min-width: 1280px) {
+      width: 58.75rem;
+      height: 33rem;
+    }
+  }
+
+  &__articles {
+    @apply space-y-3 mt-9;
+    max-width: 44rem;
+  }
+
+  &__article {
+    @apply text-justify;
+  }
+}

@@ -1,0 +1,23 @@
+.document {
+  @apply py-12 md:py-24 bg-secondary-700;
+
+  &__container {
+    @apply container mx-auto;
+  }
+
+  &__title {
+    @apply text-center text-white font-brigada font-bold;
+  }
+
+  &__files {
+    @apply flex flex-wrap justify-center mt-6 md:mt-12 gap-3 md:gap-5;
+  }
+
+  &__file {
+    @apply flex flex-col items-center text-white cursor-pointer;
+
+    &--icon {
+      @apply size-12 md:size-24 mb-1 md:mb-2;
+    }
+  }
+}

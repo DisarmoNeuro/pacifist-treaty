@@ -1,0 +1,19 @@
+.footer {
+  @apply py-4 md:py-8 mt-auto bg-primary-700;
+
+  &__container {
+    @apply container mx-auto px-6;
+  }
+
+  &__title {
+    @apply text-white font-brigada font-semibold;
+  }
+
+  &__contacts {
+    @apply flex mt-2 md:mt-5 space-x-4 md:space-x-9;
+  }
+
+  &__contact {
+    @apply w-6 md:w-8;
+  }
+}

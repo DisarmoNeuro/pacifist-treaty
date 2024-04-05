@@ -1,0 +1,43 @@
+.header {
+  @apply sticky top-0 bg-primary-700 z-10;
+
+  &__container {
+    @apply relative flex justify-between items-center container h-14 w-auto sm:w-full mx-6 sm:mx-auto;
+  }
+
+  &__logo {
+    @apply w-9 h-9 mr-12;
+  }
+
+  &__left {
+    @apply flex flex-row items-center;
+  }
+
+  &__right {
+    @apply flex items-center;
+  }
+
+  &__locale {
+    @apply w-6;
+  }
+
+  &__menu {
+    @apply hidden flex-row space-x-9 md:flex text-white;
+
+    &--item {
+      @apply cursor-pointer;
+    }
+
+    &--burger {
+      @apply w-8 text-white cursor-pointer;
+    }
+  }
+
+  &__popup {
+    @apply absolute top-full right-0 flex flex-col w-full md:w-96 py-3 bg-secondary-900;
+
+    &--item {
+      @apply flex-1 py-2 px-10 md:px-20 font-light text-white hover:bg-primary-700 cursor-pointer;
+    }
+  }
+}

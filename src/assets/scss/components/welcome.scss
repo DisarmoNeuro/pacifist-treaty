@@ -1,0 +1,22 @@
+.welcome {
+  @apply h-80 flex flex-col justify-center select-none;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+
+  background-image: url('@/assets/img/banner.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @media (min-width: 1280px) {
+    height: 54.75rem;
+  }
+
+  &__title {
+    @apply font-brigada text-white;
+  }
+
+  &__quote {
+    @apply mt-8 text-white;
+  }
+}

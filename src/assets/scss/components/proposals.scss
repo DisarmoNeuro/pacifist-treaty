@@ -1,0 +1,68 @@
+.proposals {
+  @apply py-12 md:py-24;
+
+  min-height: calc(100dvh - 56px);
+
+  &__container {
+    @apply container mx-auto px-6;
+  }
+
+  &__title {
+    @apply text-primary-700 font-brigada font-bold;
+  }
+
+  &__list {
+    @apply flex flex-col mt-8 md:mt-16 space-y-8;
+  }
+}
+
+.proposal-group {
+  @apply flex;
+
+  &__expander {
+    @apply flex items-start text-primary-700 md:flex-row-reverse;
+
+    &::after {
+      @apply inline-block content-[''] w-0.5 h-full mr-3 bg-primary-700;
+    }
+  }
+
+  &__icon {
+    @apply min-w-7 max-w-7 md:min-w-8 md:max-w-8 mr-3 cursor-pointer;
+  }
+
+  &__title {
+    @apply hidden md:block w-7 mr-3 md:w-14 text-primary-700 font-brigada font-bold select-none;
+
+    &--mobile {
+      @apply block md:hidden;
+    }
+  }
+
+  &__list {
+    @apply mt-3 md:mt-0 space-y-8;
+  }
+}
+
+.proposal {
+  @apply flex flex-col md:flex-row;
+
+  &__date {
+    @apply min-w-max mt-0.5 mb-2 mr-5 text-primary-700 select-none;
+  }
+
+  &__content {
+    @apply max-w-2xl;
+  }
+
+  &__title {
+    @apply mb-1 text-primary-700;
+  }
+
+  &__author {
+    @apply mb-1;
+  }
+
+  &__article {
+  }
+}
