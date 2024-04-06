@@ -7,7 +7,7 @@ const router = createRouter({
   scrollBehavior: to => {
     return {
       top: 56,
-      el: to.hash,
+      el: to.hash || 'body',
       behavior: 'smooth'
     }
   },
