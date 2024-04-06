@@ -6,8 +6,8 @@ const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   scrollBehavior: to => {
     return {
-      top: 0,
-      el: to.hash || 'body',
+      top: 56,
+      el: to.hash,
       behavior: 'smooth'
     }
   },
