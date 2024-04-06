@@ -6,7 +6,11 @@
   }
 
   &__logo {
-    @apply w-9 h-9 mr-12;
+    @apply mr-12;
+
+    svg {
+      @apply w-9 h-9;
+    }
   }
 
   &__left {

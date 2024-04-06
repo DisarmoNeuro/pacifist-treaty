@@ -2,8 +2,8 @@
   <header class="header">
     <div class="header__container">
       <div class="header__left">
-        <RouterLink to="/">
-          <IconLogo solid class="header__logo" />
+        <RouterLink to="/" class="header__logo">
+          <IconLogo solid />
         </RouterLink>
         <ul class="header__menu">
           <li class="header__menu--item">
